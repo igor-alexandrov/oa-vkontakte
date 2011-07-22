@@ -1,14 +1,12 @@
 # coding: utf-8
-module OmniAuth
-  module Strategies
-    class Vkontakte
-      class ViewHelper
-        module PageHelper
-          def vkontakte_login_page
-            vkontakte_header +
-            vkontakte_login_button +
-            vkontakte_footer
-          end
+class OmniAuth::Strategies::Vkontakte < OmniAuth::Strategies::OAuth2
+  class ViewHelper
+    module PageHelper
+      def vkontakte_login_page
+        vkontakte_header +
+        vkontakte_login_button +
+        vkontakte_footer
+      end
 
           def vkontakte_header
 <<-HEADER
@@ -123,8 +121,9 @@ BUTTON
   </body></html>
 FOOTER
           end
-        end
-      end
     end
   end
 end
+#     end
+#   end
+# end
